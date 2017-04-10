@@ -1,6 +1,6 @@
 package org.wefine.app.web.rest;
 
-import org.wefine.app.AngularApp;
+import org.wefine.app.Angular4XApp;
 import org.wefine.app.config.audit.AuditEventConverter;
 import org.wefine.app.domain.PersistentAuditEvent;
 import org.wefine.app.repository.PersistenceAuditEventRepository;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AngularApp.class)
+@SpringBootTest(classes = Angular4XApp.class)
 @Transactional
 public class AuditResourceIntTest {
 

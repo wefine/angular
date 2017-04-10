@@ -1,14 +1,14 @@
 version: '2'
 services:
-    angular-app:
-        image: angular
+    angular4x-app:
+        image: angular4x
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
-            - SPRING_DATASOURCE_URL=jdbc:mysql://angular-mysql:3306/angular?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATASOURCE_URL=jdbc:mysql://angular4x-mysql:3306/angular4x?useUnicode=true&characterEncoding=utf8&useSSL=false
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
         ports:
             - 8080:8080
-    angular-mysql:
+    angular4x-mysql:
         extends:
             file: mysql.yml
-            service: angular-mysql
+            service: angular4x-mysql

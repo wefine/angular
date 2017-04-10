@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AngularSharedModule } from '../shared';
+import { Angular4XSharedModule } from '../shared';
 
 import {
     adminState,
@@ -32,7 +32,7 @@ import {
 
 @NgModule({
     imports: [
-        AngularSharedModule,
+        Angular4XSharedModule,
         RouterModule.forRoot(adminState, { useHash: true })
     ],
     declarations: [
@@ -69,4 +69,4 @@ import {
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AngularAdminModule {}
+export class Angular4XAdminModule {}

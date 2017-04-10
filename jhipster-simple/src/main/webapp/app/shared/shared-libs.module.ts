@@ -24,4 +24,4 @@ import { InfiniteScrollModule } from 'angular2-infinite-scroll';
         InfiniteScrollModule
     ]
 })
-export class AngularSharedLibsModule {}
+export class Angular4XSharedLibsModule {}

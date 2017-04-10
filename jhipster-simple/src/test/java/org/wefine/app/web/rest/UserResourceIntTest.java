@@ -1,6 +1,6 @@
 package org.wefine.app.web.rest;
 
-import org.wefine.app.AngularApp;
+import org.wefine.app.Angular4XApp;
 import org.wefine.app.domain.User;
 import org.wefine.app.repository.UserRepository;
 import org.wefine.app.service.MailService;
@@ -38,7 +38,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see UserResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AngularApp.class)
+@SpringBootTest(classes = Angular4XApp.class)
 public class UserResourceIntTest {
 
     private static final String DEFAULT_LOGIN = "johndoe";

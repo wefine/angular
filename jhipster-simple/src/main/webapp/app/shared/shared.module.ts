@@ -3,8 +3,8 @@ import { DatePipe } from '@angular/common';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import {
-    AngularSharedLibsModule,
-    AngularSharedCommonModule,
+    Angular4XSharedLibsModule,
+    Angular4XSharedCommonModule,
     CSRFService,
     AuthService,
     AuthServerProvider,
@@ -20,8 +20,8 @@ import {
 
 @NgModule({
     imports: [
-        AngularSharedLibsModule,
-        AngularSharedCommonModule
+        Angular4XSharedLibsModule,
+        Angular4XSharedCommonModule
     ],
     declarations: [
         JhiLoginModalComponent,
@@ -42,7 +42,7 @@ import {
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
-        AngularSharedCommonModule,
+        Angular4XSharedCommonModule,
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
         DatePipe
@@ -50,4 +50,4 @@ import {
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class AngularSharedModule {}
+export class Angular4XSharedModule {}

@@ -1,6 +1,6 @@
 package org.wefine.app.web.rest;
 
-import org.wefine.app.AngularApp;
+import org.wefine.app.Angular4XApp;
 import org.wefine.app.web.rest.vm.LoggerVM;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see LogsResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AngularApp.class)
+@SpringBootTest(classes = Angular4XApp.class)
 public class LogsResourceIntTest {
 
     private MockMvc restLogsMockMvc;

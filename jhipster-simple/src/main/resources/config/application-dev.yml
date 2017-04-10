@@ -26,9 +26,9 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://mysqlhost:13306/angular?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/angular4x?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password: mysqlroot
+        password:
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -60,7 +60,7 @@ liquibase:
 
 # ===================================================================
 # To enable SSL, generate a certificate using:
-# keytool -genkey -alias angular -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias angular4x -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm
@@ -73,7 +73,7 @@ liquibase:
 #        key-store: keystore.p12
 #        key-store-password: <your-password>
 #        keyStoreType: PKCS12
-#        keyAlias: angular
+#        keyAlias: angular4x
 # ===================================================================
 server:
     port: 8080
@@ -91,12 +91,20 @@ jhipster:
         ehcache: # Ehcache configuration
             time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
             max-entries: 100 # Number of objects in each cache entry
+    # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
+    cors:
+        allowed-origins: "*"
+        allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        allowed-headers: "*"
+        exposed-headers:
+        allow-credentials: true
+        max-age: 1800
     security:
         remember-me:
             # security key (this key should be unique for your application, and kept secret)
-            key: a87cfa0ca055f77a21627f622c15cee13114a19e
+            key: 2df0b3a6a88d64515967724e70783a3f29560504
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: angular@localhost
+        from: angular4x@localhost
         base-url: http://127.0.0.1:8080
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
@@ -104,7 +112,7 @@ jhipster:
             enabled: false
             host: localhost
             port: 2003
-            prefix: angular
+            prefix: angular4x
         prometheus: # Use the "prometheus" Maven profile to have the Prometheus dependencies
             enabled: false
             endpoint: /prometheusMetrics

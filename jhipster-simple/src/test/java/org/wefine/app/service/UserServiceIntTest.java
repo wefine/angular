@@ -1,6 +1,6 @@
 package org.wefine.app.service;
 
-import org.wefine.app.AngularApp;
+import org.wefine.app.Angular4XApp;
 import org.wefine.app.domain.PersistentToken;
 import org.wefine.app.domain.User;
 import org.wefine.app.repository.PersistentTokenRepository;
@@ -30,7 +30,7 @@ import static org.assertj.core.api.Assertions.*;
  * @see UserService
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AngularApp.class)
+@SpringBootTest(classes = Angular4XApp.class)
 @Transactional
 public class UserServiceIntTest {
 

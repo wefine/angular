@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { Renderer, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-import { AngularTestModule } from '../../../../test.module';
+import { Angular4XTestModule } from '../../../../test.module';
 import { PasswordResetInitComponent } from '../../../../../../../main/webapp/app/account/password-reset/init/password-reset-init.component';
 import { PasswordResetInit } from '../../../../../../../main/webapp/app/account/password-reset/init/password-reset-init.service';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
         beforeEach(() => {
             fixture = TestBed.configureTestingModule({
-                imports: [AngularTestModule],
+                imports: [Angular4XTestModule],
                 declarations: [PasswordResetInitComponent],
                 providers: [
                     PasswordResetInit,
@@ -77,11 +77,11 @@ describe('Component Tests', () => {
             })
         );
 
-        it('notifies of unknown email upon e-mail address not registered/400',
+        it('notifies of unknown email upon email address not registered/400',
             inject([PasswordResetInit], (service: PasswordResetInit) => {
                 spyOn(service, 'save').and.returnValue(Observable.throw({
                     status: 400,
-                    data: 'e-mail address not registered'
+                    data: 'email address not registered'
                 }));
                 comp.resetAccount.email = 'user@domain.com';
 

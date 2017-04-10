@@ -20,7 +20,7 @@ export class JhiAlertErrorComponent implements OnDestroy {
     constructor(private alertService: AlertService, private eventManager: EventManager, private translateService: TranslateService) {
         this.alerts = [];
 
-        this.cleanHttpErrorListener = eventManager.subscribe('angularApp.httpError', (response) => {
+        this.cleanHttpErrorListener = eventManager.subscribe('angular4XApp.httpError', (response) => {
             let i;
             let httpResponse = response.content;
             switch (httpResponse.status) {
@@ -53,13 +53,13 @@ export class JhiAlertErrorComponent implements OnDestroy {
                             let fieldError = fieldErrors[i];
                             // convert 'something[14].other[4].id' to 'something[].other[].id' so translations can be written to it
                             let convertedField = fieldError.field.replace(/\[\d*\]/g, '[]');
-                            let fieldName = translateService.instant('angularApp.' +
+                            let fieldName = translateService.instant('angular4XApp.' +
                                 fieldError.objectName + '.' + convertedField);
                             this.addErrorAlert(
                                 'Field ' + fieldName + ' cannot be empty', 'error.' + fieldError.message, {fieldName: fieldName});
                         }
                     } else if (httpResponse.text() !== '' && httpResponse.json() && httpResponse.json().message) {
-                        this.addErrorAlert(httpResponse.json().message, httpResponse.json().message, httpResponse.json());
+                        this.addErrorAlert(httpResponse.json().message, httpResponse.json().message, httpResponse.json().params);
                     } else {
                         this.addErrorAlert(httpResponse.text());
                     }

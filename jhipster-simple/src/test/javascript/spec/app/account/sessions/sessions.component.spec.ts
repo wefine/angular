@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, inject, tick, fakeAsync } from '@angular/core/testing';
 import { Observable } from 'rxjs/Rx';
-import { AngularTestModule } from '../../../test.module';
+import { Angular4XTestModule } from '../../../test.module';
 import { Session } from '../../../../../../main/webapp/app/account/sessions/session.model';
 import { SessionsComponent } from '../../../../../../main/webapp/app/account/sessions/sessions.component';
 import { SessionsService } from '../../../../../../main/webapp/app/account/sessions/sessions.service';
@@ -20,7 +20,7 @@ describe('Component Tests', () => {
             sessions = new Session('xxxxxx==', new Date(2015, 10, 15), '0:0:0:0:0:0:0:1', 'Mozilla/5.0');
 
             fixture = TestBed.configureTestingModule({
-                imports: [AngularTestModule],
+                imports: [Angular4XTestModule],
                 declarations: [SessionsComponent],
                 providers: [
                     SessionsService,

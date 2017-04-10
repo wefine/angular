@@ -1,14 +1,14 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AngularSharedModule } from '../shared';
+import { Angular4XSharedModule } from '../shared';
 
 import { HOME_ROUTE, HomeComponent } from './';
 
 
 @NgModule({
     imports: [
-        AngularSharedModule,
+        Angular4XSharedModule,
         RouterModule.forRoot([ HOME_ROUTE ], { useHash: true })
     ],
     declarations: [
@@ -20,4 +20,4 @@ import { HOME_ROUTE, HomeComponent } from './';
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AngularHomeModule {}
+export class Angular4XHomeModule {}

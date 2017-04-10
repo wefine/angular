@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>org.wefine.app</groupId>
-    <artifactId>angular</artifactId>
+    <artifactId>angular-4-x</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Angular</name>
+    <name>Angular 4 X</name>
 
     <prerequisites>
         <maven>${maven.version}</maven>
@@ -26,6 +26,8 @@
         <commons-io.version>2.5</commons-io.version>
         <commons-lang.version>3.5</commons-lang.version>
         <docker-maven-plugin.version>0.4.13</docker-maven-plugin.version>
+        <!-- Overridden to get metrics-jcache -->
+        <dropwizard-metrics.version>3.2.2</dropwizard-metrics.version>
         <frontend-maven-plugin.version>1.3</frontend-maven-plugin.version>
         <hibernate.version>5.2.8.Final</hibernate.version>
         <hikaricp.version>2.6.0</hikaricp.version>
@@ -33,10 +35,10 @@
         <java.version>1.8</java.version>
         <javassist.version>3.21.0-GA</javassist.version>
         <jcache.version>1.0.0</jcache.version>
-        <jhipster.server.version>1.1.1</jhipster.server.version>
+        <jhipster.server.version>1.1.2</jhipster.server.version>
         <liquibase-hibernate5.version>3.6</liquibase-hibernate5.version>
         <liquibase-slf4j.version>2.0.0</liquibase-slf4j.version>
-        <logstash-logback-encoder.version>4.8</logstash-logback-encoder.version>
+        <logstash-logback-encoder.version>4.9</logstash-logback-encoder.version>
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <mapstruct.version>1.1.0.Final</mapstruct.version>
         <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
@@ -116,6 +118,12 @@
             <artifactId>metrics-json</artifactId>
             <version>${dropwizard-metrics.version}</version>
         </dependency>
+        
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-jcache</artifactId>
+            <version>${dropwizard-metrics.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-jvm</artifactId>
@@ -188,30 +196,10 @@
             <groupId>com.ryantenney.metrics</groupId>
             <artifactId>metrics-spring</artifactId>
             <version>${metrics-spring.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.codahale.metrics</groupId>
-                    <artifactId>metrics-annotation</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.codahale.metrics</groupId>
-                    <artifactId>metrics-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.codahale.metrics</groupId>
-                    <artifactId>metrics-healthchecks</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>tools</artifactId>
-                    <groupId>com.sun</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
@@ -257,12 +245,6 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jetty-servlet</artifactId>
-                    <groupId>org.eclipse.jetty</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -530,8 +512,8 @@
                     <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
                     <diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                     <driver>com.mysql.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost:3306/angular</url>
-                    <defaultSchemaName>angular</defaultSchemaName>
+                    <url>jdbc:mysql://localhost:3306/angular4x</url>
+                    <defaultSchemaName>angular4x</defaultSchemaName>
                     <username>root</username>
                     <password></password>
                     <referenceUrl>hibernate:spring:org.wefine.app.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
@@ -578,7 +560,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker-maven-plugin.version}</version>
                 <configuration>
-                    <imageName>angular</imageName>
+                    <imageName>angular4x</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
                         <resource>

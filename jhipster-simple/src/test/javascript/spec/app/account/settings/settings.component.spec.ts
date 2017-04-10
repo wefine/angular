@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { Observable } from 'rxjs/Rx';
 import { JhiLanguageHelper } from '../../../../../../main/webapp/app/shared';
-import { AngularTestModule } from '../../../test.module';
+import { Angular4XTestModule } from '../../../test.module';
 import { Principal, AccountService } from '../../../../../../main/webapp/app/shared';
 import { SettingsComponent } from '../../../../../../main/webapp/app/account/settings/settings.component';
 import { MockAccountService } from '../../../helpers/mock-account.service';
@@ -14,12 +14,12 @@ describe('Component Tests', () => {
 
         let comp: SettingsComponent;
         let fixture: ComponentFixture<SettingsComponent>;
-        let mockAuth: MockAccountService;
-        let mockPrincipal: MockPrincipal;
+        let mockAuth: any;
+        let mockPrincipal: any;
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [AngularTestModule],
+                imports: [Angular4XTestModule],
                 declarations: [SettingsComponent],
                 providers: [
                     {

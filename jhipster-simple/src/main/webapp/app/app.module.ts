@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2Webstorage } from 'ng2-webstorage';
 
-import { AngularSharedModule, UserRouteAccessService } from './shared';
-import { AngularHomeModule } from './home/home.module';
-import { AngularAdminModule } from './admin/admin.module';
-import { AngularAccountModule } from './account/account.module';
-import { AngularEntityModule } from './entities/entity.module';
+import { Angular4XSharedModule, UserRouteAccessService } from './shared';
+import { Angular4XHomeModule } from './home/home.module';
+import { Angular4XAdminModule } from './admin/admin.module';
+import { Angular4XAccountModule } from './account/account.module';
+import { Angular4XEntityModule } from './entities/entity.module';
 
 import { LayoutRoutingModule } from './layouts';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
@@ -30,11 +30,11 @@ import {
         BrowserModule,
         LayoutRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
-        AngularSharedModule,
-        AngularHomeModule,
-        AngularAdminModule,
-        AngularAccountModule,
-        AngularEntityModule
+        Angular4XSharedModule,
+        Angular4XHomeModule,
+        Angular4XAdminModule,
+        Angular4XAccountModule,
+        Angular4XEntityModule
     ],
     declarations: [
         JhiMainComponent,
@@ -46,12 +46,10 @@ import {
     ],
     providers: [
         ProfileService,
-        { provide: Window, useValue: window },
-        { provide: Document, useValue: document },
         customHttpProvider(),
         PaginationConfig,
         UserRouteAccessService
     ],
     bootstrap: [ JhiMainComponent ]
 })
-export class AngularAppModule {}
+export class Angular4XAppModule {}

@@ -16,14 +16,14 @@
 
 spring:
     application:
-        name: angular
+        name: angular4x
     jackson:
         serialization.write_dates_as_timestamps: false
     cache:
         type: none
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:angular;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:angular4x;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -78,7 +78,7 @@ jhipster:
     security:
         remember-me:
             # security key (this key should be unique for your application, and kept secret)
-            key: a87cfa0ca055f77a21627f622c15cee13114a19e
+            key: 2df0b3a6a88d64515967724e70783a3f29560504
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
 

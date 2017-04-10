@@ -24,18 +24,18 @@ import java.util.Collection;
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class AngularApp {
+public class Angular4XApp {
 
-    private static final Logger log = LoggerFactory.getLogger(AngularApp.class);
+    private static final Logger log = LoggerFactory.getLogger(Angular4XApp.class);
 
     private final Environment env;
 
-    public AngularApp(Environment env) {
+    public Angular4XApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes angular.
+     * Initializes angular4x.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>
@@ -61,7 +61,7 @@ public class AngularApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(AngularApp.class);
+        SpringApplication app = new SpringApplication(Angular4XApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { DatePipe } from '@angular/common';
 import { NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
 import { ParseLinks } from 'ng-jhipster';
-import { AngularTestModule } from '../../../test.module';
+import { Angular4XTestModule } from '../../../test.module';
 import { PaginationConfig } from '../../../../../../main/webapp/app/blocks/config/uib-pagination.config'
 import { AuditsComponent } from '../../../../../../main/webapp/app/admin/audits/audits.component';
 import { AuditsService } from '../../../../../../main/webapp/app/admin/audits/audits.service';
@@ -14,9 +14,15 @@ function getDate(isToday= true){
     if (isToday) {
         // Today + 1 day - needed if the current day must be included
         date.setDate(date.getDate() + 1);
-        return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    } else {
+      // get last month
+      if(date.getMonth() === 0) {
+        date = new Date(date.getFullYear() - 1, 11, date.getDate());
+      } else {
+        date = new Date(date.getFullYear(), date.getMonth() - 1, date.getDate());
+      }
     }
-    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
 
 describe('Component Tests', () => {
@@ -29,7 +35,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [AngularTestModule],
+                imports: [Angular4XTestModule],
                 declarations: [AuditsComponent],
                 providers: [
                     AuditsService,
@@ -61,7 +67,7 @@ describe('Component Tests', () => {
         });
 
         describe('previousMonth function ', () => {
-            it('should set toDate to current date', () => {
+            it('should set fromDate to current date', () => {
                comp.previousMonth();
                expect(comp.fromDate).toBe(getDate(false));
             });

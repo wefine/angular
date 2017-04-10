@@ -1,6 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { ProdConfig } from './blocks/config/prod.config';
-import { AngularAppModule } from './app.module';
+import { Angular4XAppModule } from './app.module';
 
 ProdConfig();
 
@@ -8,4 +8,4 @@ if (module['hot']) {
     module['hot'].accept();
 }
 
-platformBrowserDynamic().bootstrapModule(AngularAppModule);
+platformBrowserDynamic().bootstrapModule(Angular4XAppModule);

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { Observable } from 'rxjs/Rx';
-import { AngularTestModule } from '../../../test.module';
+import { Angular4XTestModule } from '../../../test.module';
 import { PasswordComponent } from '../../../../../../main/webapp/app/account/password/password.component';
 import { Password } from '../../../../../../main/webapp/app/account/password/password.service';
 import { Principal } from '../../../../../../main/webapp/app/shared/auth/principal.service';
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [AngularTestModule],
+                imports: [Angular4XTestModule],
                 declarations: [PasswordComponent],
                 providers: [
                     Principal,

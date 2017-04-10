@@ -10,15 +10,15 @@ public final class HeaderUtil {
 
     private static final Logger log = LoggerFactory.getLogger(HeaderUtil.class);
 
-    private static final String APPLICATION_NAME = "angularApp";
+    private static final String APPLICATION_NAME = "angular4XApp";
 
     private HeaderUtil() {
     }
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-angularApp-alert", message);
-        headers.add("X-angularApp-params", param);
+        headers.add("X-angular4XApp-alert", message);
+        headers.add("X-angular4XApp-params", param);
         return headers;
     }
 
@@ -37,8 +37,8 @@ public final class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity creation failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-angularApp-error", "error." + errorKey);
-        headers.add("X-angularApp-params", entityName);
+        headers.add("X-angular4XApp-error", "error." + errorKey);
+        headers.add("X-angular4XApp-params", entityName);
         return headers;
     }
 }

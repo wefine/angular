@@ -3,7 +3,7 @@ import { Renderer, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { JhiLanguageService } from 'ng-jhipster';
 import { MockLanguageService } from '../../../helpers/mock-language.service';
-import { AngularTestModule } from '../../../test.module';
+import { Angular4XTestModule } from '../../../test.module';
 import { LoginModalService } from '../../../../../../main/webapp/app/shared';
 import { Register } from '../../../../../../main/webapp/app/account/register/register.service';
 import { RegisterComponent } from '../../../../../../main/webapp/app/account/register/register.component';
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [AngularTestModule],
+                imports: [Angular4XTestModule],
                 declarations: [RegisterComponent],
                 providers: [
                     Register,
@@ -98,12 +98,12 @@ describe('Component Tests', () => {
             )
         );
 
-        it('should notify of email existence upon 400/e-mail address already in use',
+        it('should notify of email existence upon 400/email address already in use',
             inject([Register],
                 fakeAsync((service: Register) => {
                     spyOn(service, 'save').and.returnValue(Observable.throw({
                         status: 400,
-                        _body: 'e-mail address already in use'
+                        _body: 'email address already in use'
                     }));
                     comp.registerAccount.password = comp.confirmPassword = 'password';
 

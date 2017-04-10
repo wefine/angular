@@ -18,8 +18,12 @@
             "node_modules/@types"
         ]
     },
-    "include": [
-        "src/main/webapp/app",
-        "src/test/javascript"
-    ]
+    "files": [
+        "src/main/webapp/app/app.module.ts",
+        "src/main/webapp/app/app.main.ts"
+    ],
+    "angularCompilerOptions": {
+        "genDir": "target/aot",
+        "skipMetadataEmit": true
+    }
 }

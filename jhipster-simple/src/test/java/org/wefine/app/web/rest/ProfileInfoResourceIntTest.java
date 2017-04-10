@@ -1,7 +1,7 @@
 package org.wefine.app.web.rest;
 
 import io.github.jhipster.config.JHipsterProperties;
-import org.wefine.app.AngularApp;
+import org.wefine.app.Angular4XApp;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ProfileInfoResource
  **/
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AngularApp.class)
+@SpringBootTest(classes = Angular4XApp.class)
 public class ProfileInfoResourceIntTest {
 
     @Mock
