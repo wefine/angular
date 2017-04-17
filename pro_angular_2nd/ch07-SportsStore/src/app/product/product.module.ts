@@ -1,9 +1,11 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { ProductDataService } from "./product-data.service";
+import { ProductRepositoryService } from "./product-repository.service";
 
 @NgModule({
-    imports: [
-        CommonModule
+    providers: [
+        ProductDataService,
+        ProductRepositoryService
     ],
     declarations: []
 })
