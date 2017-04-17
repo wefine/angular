@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 import { Product } from "../product/product.model";
 import { ProductRepositoryService } from "../product/product-repository.service";
@@ -44,5 +44,10 @@ export class StoreComponent {
         return Array(
             Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage)
         ).fill(0).map((x, i) => i + 1);
+    }
+
+    get pageCount(): number {
+        return Math.ceil(this.repository
+                .getProducts(this.selectedCategory).length / this.productsPerPage)
     }
 }
