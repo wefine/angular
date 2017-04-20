@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 
 import { Product } from "../product/product.model";
 import { ProductRepositoryService } from "../product/product-repository.service";
+import { CartService } from "../product/cart.service";
 
 @Component({
     selector: 'store',
@@ -13,7 +14,9 @@ export class StoreComponent {
     public productsPerPage = 4;
     public selectedPage = 1;
 
-    constructor(private repository: ProductRepositoryService) {
+    constructor(
+        private repository: ProductRepositoryService,
+        private cart: CartService) {
     }
 
     get products(): Product[] {
@@ -49,5 +52,9 @@ export class StoreComponent {
     get pageCount(): number {
         return Math.ceil(this.repository
                 .getProducts(this.selectedCategory).length / this.productsPerPage)
+    }
+
+    addProductToCart(product: Product) {
+        this.cart.addLine(product);
     }
 }
