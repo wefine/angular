@@ -3,6 +3,7 @@ import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
 
 import { Product } from "./product.model";
+import { OrderService } from "./order.service";
 
 @Injectable()
 export class ProductDataService {
@@ -30,5 +31,11 @@ export class ProductDataService {
 
     getProducts(): Observable<Product[]> {
         return Observable.from([this.products]);
+    }
+
+    saveOrder(order: OrderService): Observable<OrderService> {
+        console.log(JSON.stringify(order));
+
+        return Observable.from([order]);
     }
 }
