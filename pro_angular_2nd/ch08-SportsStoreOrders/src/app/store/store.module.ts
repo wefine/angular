@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
+import { RouterModule } from '@angular/router';
 
 import { StoreComponent } from "./store.component";
 import { ProductModule } from "../product/product.module";
@@ -13,7 +14,8 @@ import { CheckoutComponent } from "./checkout/checkout.component";
     imports: [
         BrowserModule,
         FormsModule,
-        ProductModule
+        ProductModule,
+        RouterModule
     ],
     declarations: [
         CartDetailComponent,
