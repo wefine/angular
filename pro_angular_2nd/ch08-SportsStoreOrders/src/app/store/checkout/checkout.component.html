@@ -13,15 +13,15 @@
       (ngSubmit)="submitOrder(form)" class="m-a-1">
     <div class="form-group">
         <label>Name</label>
-        <input class="form-control" #name="ngModel" name="name"
+        <input class="form-control" #name="ngModel" name="name" minlength="4"
                [(ngModel)]="order.name" required/>
         <span *ngIf="submitted && name.invalid" class="text-danger">
-            Please enter your name
+            Please enter your name, min length is 4
         </span>
     </div>
     <div class="form-group">
         <label>Address</label>
-        <input class="form-control" #address="ngModel" name="address"
+        <input class="form-control" #address="ngModel" name="address" email=""
                [(ngModel)]="order.address" required/>
         <span *ngIf="submitted && address.invalid" class="text-danger">
             Please enter your address
@@ -30,9 +30,9 @@
     <div class="form-group">
         <label>City</label>
         <input class="form-control" #city="ngModel" name="city"
-               [(ngModel)]="order.city" required/>
+               [(ngModel)]="order.city" required minlength="2"/>
         <span *ngIf="submitted && city.invalid" class="text-danger">
-            Please enter your city
+            Please enter your city, min length is 2
         </span>
     </div>
     <div class="form-group">
@@ -45,7 +45,7 @@
     </div>
     <div class="form-group">
         <label>Zip/Postal Code</label>
-        <input class="form-control" #zip="ngModel" name="zip"
+        <input class="form-control" #zip="ngModel" name="zip" pattern="\d+"
                [(ngModel)]="order.zip" required/>
         <span *ngIf="submitted && zip.invalid" class="text-danger">
             Please enter your zip/postal code

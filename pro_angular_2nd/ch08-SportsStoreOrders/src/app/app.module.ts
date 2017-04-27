@@ -13,7 +13,9 @@ import { StoreFirstGuard } from "./guard/store-first.guard";
     declarations: [
         AppComponent
     ],
-    imports: [BrowserModule, StoreModule,
+    imports: [
+        BrowserModule,
+        StoreModule,
         RouterModule.forRoot([
             {
                 path: "store", component: StoreComponent,
