@@ -34,6 +34,7 @@ export class StoreComponent {
 
     changeCategory(newCategory?: string) {
         this.selectedCategory = newCategory;
+        this.changePage(1);
     }
 
     changePage(newPage: number) {
