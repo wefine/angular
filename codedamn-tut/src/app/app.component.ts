@@ -10,8 +10,13 @@ export class AppComponent {
   language = {
     "frontend" : ["react", "angular", "vue"]
   };
+  result = 2;
 
   toggleDiv() {
     this.visible = !this.visible;
+  }
+
+  changeResult(event) {
+    this.result = event.target.value;
   }
 }

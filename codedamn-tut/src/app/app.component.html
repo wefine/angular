@@ -12,7 +12,7 @@
 <ng-template #even>Even number of click!</ng-template>
 
 
-<div *ngIf="language.frontend; let frontendLanguages ;" >
+<div *ngIf="language.frontend; let frontendLanguages ;">
   {{ frontendLanguages.join(",") }}
 </div>
 
@@ -21,3 +21,13 @@
   <li *ngIf="first">{{ item }}</li>
   <li *ngIf="even">{{ item }}</li>
 </ul>
+
+<div>
+  <li>result = {{ result }}</li>
+  <li>1 + 1 = <input type="text" value="{{ result }}"></li>
+  <li>1 + 1 = <input type="text" [value]="result"></li>
+  <li>1 + 1 = <input type="text" [value]="result" (keyup)="changeResult($event)"></li>
+  <li>1 + 1 = <input type="text" bind-value=" result " on-keyup="changeResult($event)"></li>
+  <li>1 + 1 = <input type="text" [(ngModel)]="result"></li>
+
+</div>

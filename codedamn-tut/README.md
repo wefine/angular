@@ -80,7 +80,7 @@ export class BlueColorDirective {
 
 ```
 
-## 04.ngif
+## 04. ngif
 
 ### ng-template
 ```html
@@ -104,7 +104,7 @@ export class BlueColorDirective {
 
 ``` 
 
-## 05.ngFor
+## 05. ngFor
 ngFor有几个内置的变量，如index, first, last, odd, even等关于序号的变量。
 
 ```html
@@ -117,4 +117,44 @@ ngFor有几个内置的变量，如index, first, last, odd, even等关于序号�
 
 ```
 
+## 06. data bind
+### common
+单向数据绑定，即组件中的属性数据绑定到页面中展示。
+
+```html
+<div>
+  <li>result = {{ result }}</li>
+  <li>1 + 1 = <input type="text" value="{{ result }}"></li>
+  <li>1 + 1 = <input type="text" [value]="result"></li>
+  <li>1 + 1 = <input type="text" [value]="result" (keyup)="changeResult($event)"></li>
+  <li>1 + 1 = <input type="text" bind-value=" result " on-keyup="changeResult($event)"></li>
+</div>
+
+```
+### ngModel
+使用`[(ngModel)]`来简化数据双向绑定。首先在`AppModule`中引入：
+```typescript
+import { NgModule } from '@angular/core';
+
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+  ],
+  imports: [
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: []
+})
+export class AppModule {
+}
+
+```
+具体使用方式：
+```html
+  <li>1 + 1 = <input type="text" [(ngModel)]="result"></li>
+
+```
+## 06.ngif
 ## 06.ngif
