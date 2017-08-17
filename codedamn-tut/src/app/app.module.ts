@@ -17,4 +17,5 @@ import { BlueColorDirective } from './blue-color.directive';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

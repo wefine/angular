@@ -1,4 +1,4 @@
-import {Directive, ElementRef} from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[blueColored]'
@@ -6,7 +6,18 @@ import {Directive, ElementRef} from '@angular/core';
 export class BlueColorDirective {
 
   constructor(element: ElementRef) {
-    element.nativeElement.style.color = "blue";
+    element.nativeElement.style.color = 'blue';
   }
+
+  @HostListener('mouseover')
+  mouseover() {
+    console.log('mouseover')
+  }
+
+  @HostListener('document:click', ['$event'])
+  click(event) {
+    console.log('clicked ', event)
+  }
+
 
 }
