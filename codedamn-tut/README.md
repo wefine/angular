@@ -79,3 +79,42 @@ export class BlueColorDirective {
 }
 
 ```
+
+## 04.ngif
+
+### ng-template
+```html
+<button (click)="toggleDiv()">hide|show</button>
+
+<div *ngIf="visible; then odd else even">
+  Div Show
+</div>
+
+<ng-template #odd>Odd number of click!</ng-template>
+<ng-template #even>Even number of click!</ng-template>
+
+```
+当`ngif`使用了`ng-template`后，`ngif`所在元素所包含的全部内容均无意义了。
+
+### local variable
+```html
+<div *ngIf="language.frontend; let frontendLanguages " >
+  {{ frontendLanguages.join(",") }}
+</div>
+
+``` 
+
+## 05.ngFor
+ngFor有几个内置的变量，如index, first, last, odd, even等关于序号的变量。
+
+```html
+
+<ul *ngFor="let item of language.frontend; let even = even; let first=first;">
+  <li>{{ item }}</li>
+  <li *ngIf="first">{{ item }}</li>
+  <li *ngIf="even">{{ item }}</li>
+</ul>
+
+```
+
+## 06.ngif

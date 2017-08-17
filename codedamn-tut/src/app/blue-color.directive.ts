@@ -14,10 +14,8 @@ export class BlueColorDirective {
     console.log('mouseover')
   }
 
-  @HostListener('document:click', ['$event'])
+  @HostListener('click', ['$event'])
   click(event) {
     console.log('clicked ', event)
   }
-
-
 }

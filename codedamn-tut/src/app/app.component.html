@@ -1,3 +1,23 @@
 <div style="text-align:center">
   <app-header></app-header>
 </div>
+
+<button (click)="toggleDiv()">hide|show</button>
+
+<div *ngIf="visible; then odd else even">
+  Div Show
+</div>
+
+<ng-template #odd>Odd number of click!</ng-template>
+<ng-template #even>Even number of click!</ng-template>
+
+
+<div *ngIf="language.frontend; let frontendLanguages ;" >
+  {{ frontendLanguages.join(",") }}
+</div>
+
+<ul *ngFor="let item of language.frontend; let even = even; let first=first;">
+  <li>{{ item }}</li>
+  <li *ngIf="first">{{ item }}</li>
+  <li *ngIf="even">{{ item }}</li>
+</ul>
