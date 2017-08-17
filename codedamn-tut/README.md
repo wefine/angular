@@ -156,5 +156,46 @@ export class AppModule {
   <li>1 + 1 = <input type="text" [(ngModel)]="result"></li>
 
 ```
-## 06.ngif
-## 06.ngif
+## 07. router 路由
+### 基本配置
+在`AppModule`头中引入 `RouterModule, Routes`；定义路由对象； 配置`RouterModule.forRoot(appRoutes)`。
+```typescript
+
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: 'header', component: HeaderComponent},
+  {path: '', redirectTo: '/header', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      {enableTracing: true} // <-- 仅用于调试
+    )
+  ]
+})
+export class AppModule {
+}
+
+```
+### 简单使用
+使用 `router-outlet` 来使路由在指定位置显示。
+```html
+<router-outlet></router-outlet>
+```
+
+### 跳转链接与激活状态
+
+```html
+<div>
+  <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+  <a routerLink="/header" routerLinkActive="active">Header</a>
+</div>
+```
+## 08. ngif
+## 09. ngif
+## 10. ngif

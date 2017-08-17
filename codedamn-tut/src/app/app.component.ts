@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   visible = true;
   language = {
-    "frontend" : ["react", "angular", "vue"]
+    'frontend': ['react', 'angular', 'vue']
   };
   result = 2;
 

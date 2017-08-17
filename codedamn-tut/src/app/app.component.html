@@ -1,6 +1,3 @@
-<div style="text-align:center">
-  <app-header></app-header>
-</div>
 
 <button (click)="toggleDiv()">hide|show</button>
 
@@ -31,3 +28,10 @@
   <li>1 + 1 = <input type="text" [(ngModel)]="result"></li>
 
 </div>
+
+<h2>Router Views:</h2>
+<div>
+  <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+  <a routerLink="/header" routerLinkActive="active">Header</a>
+</div>
+<router-outlet></router-outlet>
